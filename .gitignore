@@ -1,0 +1,6 @@
+data
+.venv
+*_checkpoints
+__pycache__
+output
+weights
