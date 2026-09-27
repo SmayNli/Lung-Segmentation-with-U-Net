@@ -44,7 +44,7 @@ Here is a side-by-side comparisons showing the Input CT, Ground Truth Mask, Mode
 └── requirements.txt       # Dependencies
 ```
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Data Split
 Split your paired CT images and masks into 70% Train, 15% Validation, and 15% Test sets:
@@ -67,7 +67,7 @@ python -m src.predict
 
 ---
 
-## 📥 Model Weights
+## Model Weights
 
 Pre-trained weights (`100epochs.pt`) are available under the **[GitHub Releases](https://github.com/SmayNli/Lung-Segmentation-with-U-Net/releases/tag/v1.0.0)** page. 
 
