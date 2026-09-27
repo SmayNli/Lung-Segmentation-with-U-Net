@@ -42,3 +42,45 @@ Here is a side-by-side comparisons showing the Input CT, Ground Truth Mask, Mode
 │   └── predict.py         # Single & batch inference pipeline
 ├── weights/               # Trained checkpoints (100epochs.pt)
 └── requirements.txt       # Dependencies
+```
+
+## 🚀 How to Run
+
+### 1. Data Split
+Split your paired CT images and masks into 70% Train, 15% Validation, and 15% Test sets:
+```bash
+python scripts/data_split.py
+```
+
+### 2. Training
+Train the U-Net model from scratch using custom `DiceBCELoss` and evaluation metrics:
+```bash
+python -m src.train
+```
+
+### 3. Inference & Visual Evaluation
+Run inference on the test set, calculate **mIoU & mDICE**, and generate 4-panel comparison images:
+```bash
+python -m src.predict
+```
+*Generated predictions will be saved to `output/predictions/` and 4-panel overlays to `output/comprasion/`.*
+
+---
+
+## 📥 Model Weights
+
+Pre-trained weights (`100epochs.pt`) are available under the **[GitHub Releases](https://github.com/SmayNli/Lung-Segmentation-with-U-Net/releases/tag/v1.0.0)** page. 
+
+You can download and place them directly into the `weights/` directory using your terminal:
+
+### Windows (PowerShell):
+```powershell
+New-Item -ItemType Directory -Force -Path weights
+Invoke-WebRequest -Uri "https://github.com/SmayNli/Lung-Segmentation-with-U-Net/releases/download/v1.0.0/100epochs.pt" -OutFile "weights/100epochs.pt"
+```
+
+### Linux / macOS:
+```bash
+mkdir -p weights
+curl -L -o weights/100epochs.pt "https://github.com/SmayNli/Lung-Segmentation-with-U-Net/releases/download/v1.0.0/100epochs.pt"
+```
