@@ -15,8 +15,8 @@ def get_transforms():
     ToTensorV2()
 ])
 
-def predict_single(model, image_dir, mask_dir=None, transforms=get_transforms(), output_dir="output/predictions", comprasion_dir="output/comprasion"):
-    """Returns IoU and Dice scores of prediction, creates and saves mask and comprasion images to provided directory"""
+def predict_single(model, image_dir, mask_dir=None, transforms=get_transforms(), output_dir="output/predictions", comprasion_dir="output/comparison"):
+    """Returns IoU and Dice scores of prediction, creates and saves mask and comparison images to provided directory"""
 
     output_dir=Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

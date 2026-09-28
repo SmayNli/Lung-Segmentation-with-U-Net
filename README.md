@@ -18,8 +18,8 @@ PyTorch implementation of the classic U-Net architecture built from scratch for 
 
 Here is a side-by-side comparisons showing the Input CT, Ground Truth Mask, Model Prediction, and Colored Overlap:
 
-![Comparison](assets/sample_comprasion1.png)
-![Comparison](assets/sample_comprasion2.png)
+![Comparison](assets/sample_comparison1.png)
+![Comparison](assets/sample_comparison2.png)
 ---
 
 ## Project Structure
