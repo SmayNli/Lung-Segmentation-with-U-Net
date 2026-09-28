@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 
 def save_comparison(image, true_mask, pred_mask, save_path):
+    """Creates comprasion image by using provided image, true_mask and pred_mask. In last image it overlays image and pred_mask"""
 
     save_path = Path(save_path)
     save_path.parent.mkdir(parents=True, exist_ok=True)
@@ -37,3 +38,15 @@ def save_comparison(image, true_mask, pred_mask, save_path):
     plt.tight_layout()
     plt.savefig(save_path, bbox_inches="tight", dpi=150)
     plt.close()
+
+if __name__ == "__main__":
+
+    tensor1=np.array(np.random.randn(256,256))
+    tensor2=np.array(np.random.randn(256,256))
+    tensor3=np.array(np.random.randn(256,256))
+
+    tensor1=Image.fromarray(tensor1)
+    tensor2=Image.fromarray(tensor2)
+    tensor3=Image.fromarray(tensor3)
+
+    save_comparison(tensor1, tensor2, tensor3, save_path="")
