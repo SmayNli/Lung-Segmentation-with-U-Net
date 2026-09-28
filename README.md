@@ -28,7 +28,7 @@ Here is a side-by-side comparisons showing the Input CT, Ground Truth Mask, Mode
 ├── data/                  # CT scans and masks (ignored in git)
 ├── output/
 │   ├── predictions/       # Saved binary mask predictions
-│   └── comprasion/        # 4-panel visual comparison figures
+│   └── comparison/        # 4-panel visual comparison figures
 ├── scripts/
 │   ├── data_split.py      # Deterministic train/val/test splitter
 │   └── data_visualize.py  # Matplotlib 4-panel overlap visualizer
@@ -63,7 +63,7 @@ Run inference on the test set, calculate **mIoU & mDICE**, and generate 4-panel 
 ```bash
 python -m src.predict
 ```
-*Generated predictions will be saved to `output/predictions/` and 4-panel overlays to `output/comprasion/`.*
+*Generated predictions will be saved to `output/predictions/` and 4-panel overlays to `output/comparison/`.*
 
 ---
 

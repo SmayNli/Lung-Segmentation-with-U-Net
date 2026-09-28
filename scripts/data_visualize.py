@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 def save_comparison(image, true_mask, pred_mask, save_path):
-    """Creates comprasion image by using provided image, true_mask and pred_mask. In last image it overlays image and pred_mask"""
+    """Creates comparison image by using provided image, true_mask and pred_mask. In last image it overlays image and pred_mask"""
 
     save_path = Path(save_path)
     save_path.parent.mkdir(parents=True, exist_ok=True)

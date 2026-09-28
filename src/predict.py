@@ -15,7 +15,7 @@ def get_transforms():
     ToTensorV2()
 ])
 
-def predict_single(model, image_dir, mask_dir=None, transforms=get_transforms(), output_dir="output/predictions", comprasion_dir="output/comparison"):
+def predict_single(model, image_dir, mask_dir=None, transforms=get_transforms(), output_dir="output/predictions", comparison_dir="output/comparison"):
     """Returns IoU and Dice scores of prediction, creates and saves mask and comparison images to provided directory"""
 
     output_dir=Path(output_dir)
@@ -66,8 +66,8 @@ def predict_single(model, image_dir, mask_dir=None, transforms=get_transforms(),
     print(f"Prediction saved: {save_path.name}")
 
     if y_true is not None:
-        comprasion_save_path = Path(comprasion_dir) / f"comprasion_{path.stem}.png"
-        save_comparison(Image.fromarray(image), Image.open(mask_dir), Image.fromarray(mask_np), save_path=comprasion_save_path)
+        comparison_save_path = Path(comparison_dir) / f"comparison_{path.stem}.png"
+        save_comparison(Image.fromarray(image), Image.open(mask_dir), Image.fromarray(mask_np), save_path=comparison_save_path)
 
     return iou, dice
 
